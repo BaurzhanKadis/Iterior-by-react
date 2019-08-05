@@ -1,0 +1,50 @@
+.button-menu {
+  width: 60px;
+  height: 60px;
+  display: none;
+  border-radius: 10px;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+.button-menu span {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #8c8c8c;
+  display: block;
+  top: calc(50% - 1px);
+  left: calc(29% - 1px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.button-menu span:nth-child(1) {
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+.button-menu span:nth-child(3) {
+  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+}
+.button-menu.active span:nth-child(1) {
+  -webkit-transform: translateY(0px) rotate(45deg);
+          transform: translateY(0px) rotate(45deg);
+}
+.button-menu.active span:nth-child(3) {
+  -webkit-transform: translateY(0px) rotate(-45deg);
+          transform: translateY(0px) rotate(-45deg);
+}
+.button-menu.active span:nth-child(2) {
+  display: none;
+}  
+@media (max-width: 768px) {
+  .button-menu {
+    display: block;
+  }
+}
