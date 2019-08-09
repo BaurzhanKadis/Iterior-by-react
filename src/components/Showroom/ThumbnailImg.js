@@ -1,45 +1,59 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { classImg } from '../data';
 
-class ThumbnailImg extends Component {
-
-  // state = {
-  //   activeIndex: 0
-  // }
-
-  // handleClick = (e) => {
-  //   const newActiveIndex = e.target.getAttribute('data-index');
-  //   this.setState({ activeIndex: newActiveIndex });
-  // };
-
-  render() {
-    const { activeIndex, handleClick } = this.props;
-    // console.log(activeIndex);
-    const gallary = classImg.map( (item, i) => {
-      return <li  key={item.id}>
-                <img  className="gallary-img" 
-                      src={item.imgUrl} 
-                      alt="img"
-                      data-index={i} 
-                      onClick={handleClick}
-                />
-             </li>
-    });
-    return (
-      <ThumbnailImgContainer>
-        <WindowImg>
-          <img className="gallary-img-window" src={classImg[activeIndex].imgUrl} alt="slider"/>
-        </WindowImg>
-        <MiniImg>
-          <ul>
-            {gallary}
-          </ul>
-        </MiniImg>
-      </ThumbnailImgContainer>
-    );
-  }
+const ThumbnailImg = ({ activeIndex, handleClick }) => {
+  const gallary = classImg.map( (item, i) => {
+    return <li  key={item.id}>
+              <img  className="gallary-img" 
+                    src={item.imgUrl} 
+                    alt="img"
+                    data-index={i} 
+                    onClick={handleClick}
+              />
+           </li>
+  });
+  return (
+          <ThumbnailImgContainer>
+            <WindowImg>
+              <img className="gallary-img-window" src={classImg[activeIndex].imgUrl} alt="slider"/>
+            </WindowImg>
+            <MiniImg>
+              <ul>
+                {gallary}
+              </ul>
+            </MiniImg>
+          </ThumbnailImgContainer>
+        );
 }
+// class ThumbnailImg extends Component {
+
+//   render() {
+//     const { activeIndex, handleClick } = this.props;
+//     const gallary = classImg.map( (item, i) => {
+//       return <li  key={item.id}>
+//                 <img  className="gallary-img" 
+//                       src={item.imgUrl} 
+//                       alt="img"
+//                       data-index={i} 
+//                       onClick={handleClick}
+//                 />
+//              </li>
+//     });
+//     return (
+//       <ThumbnailImgContainer>
+//         <WindowImg>
+//           <img className="gallary-img-window" src={classImg[activeIndex].imgUrl} alt="slider"/>
+//         </WindowImg>
+//         <MiniImg>
+//           <ul>
+//             {gallary}
+//           </ul>
+//         </MiniImg>
+//       </ThumbnailImgContainer>
+//     );
+//   }
+// }
 const ThumbnailImgContainer = styled.div`
   width: 50%;
   @media (max-width: 768px) {

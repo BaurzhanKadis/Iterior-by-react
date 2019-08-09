@@ -27,12 +27,18 @@ class ThumbnailText extends Component {
             order us <FontAwesomeIcon className="arrow" icon={faChevronRight} />
           </Link>
         </header>
+        <div className="text">
+          {classImg[activeIndex].text}
+        </div>
       </ThumbnailTextContainer>
     );
   }
 }
 const ThumbnailTextContainer = styled.div`
   width: 50%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   header {
     text-align: center;
     padding: 20px;
@@ -84,6 +90,11 @@ const ThumbnailTextContainer = styled.div`
         }
       }
     }
+  }
+  .text {
+    color: #212121;
+    text-align: center;
+    padding: 20px;
   }
 `;
 export default ThumbnailText;

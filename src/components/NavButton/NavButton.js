@@ -1,30 +1,45 @@
-import React, { Component } from 'react';
-// import styled from 'styled-components';
+import React from 'react';
 import './NavButton.css';
 
-class NavButton extends Component {
-  
-  render() {
-    const { handleClick, buttonClick } = this.props;
-    // const { buttonClick } = this.state;
-    console.log(buttonClick);
-
-    let classNames = 'button-menu';
+const NavButton = ({ handleClick, buttonClick }) => {
+  console.log(buttonClick);
+  let classNames = 'button-menu';
     if(buttonClick) {
       classNames += ' active';
-    }
-    return (
-      // <ButtonMenu>
-      <div className={classNames}
-        onClick={handleClick}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>  
-      // </ButtonMenu>
-    );
   }
+    return (
+      <div 
+        className={classNames}
+        onClick={handleClick}>
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>  
+    );
 }
+// class NavButton extends Component {
+  
+//   render() {
+//     const { handleClick, buttonClick } = this.props;
+//     // const { buttonClick } = this.state;
+//     console.log(buttonClick);
+
+//     let classNames = 'button-menu';
+//     if(buttonClick) {
+//       classNames += ' active';
+//     }
+//     return (
+//       // <ButtonMenu>
+//       <div className={classNames}
+//         onClick={handleClick}>
+//         <span></span>
+//         <span></span>
+//         <span></span>
+//       </div>  
+//       // </ButtonMenu>
+//     );
+//   }
+// }
 // const ButtonMenu = styled.div`
 //   width: 60px;
 //   height: 60px;

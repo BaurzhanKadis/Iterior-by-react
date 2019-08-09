@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,7 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import NavButton from './NavButton/NavButton';
 import NavBarMobile from './NavBarMobile/NavBarMobile';
 import './Navbar.css';
-import $ from "jquery";
+// import $ from "jquery";
 
 class Navbar extends Component {
 

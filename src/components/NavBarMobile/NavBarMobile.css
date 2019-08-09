@@ -2,6 +2,7 @@
   position: absolute;
   background: #fff;
   width: 100%;
+  z-index: 1;
   top: -260px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
